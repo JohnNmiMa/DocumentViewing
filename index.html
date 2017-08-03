@@ -14,8 +14,10 @@
 	</head>
     <body ng-controller="main">
 		<header>
-			<div class="top" layout="row">
+			<div class="top" layout="row" layout-align="start center">
                 <a class="name" href="" delay="500">Document<span>Viewing</span></a>
+
+                <div flex></div>
 
                 <div class="mobile-links flexitem-right-main">
                     <div class="hamburger flex-col flex-space-around-main" id="hamburger" ng-click="toggleHamburger(this, $event)"></div>
@@ -30,6 +32,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <ul class="desktop-links">
                     <li class="githubButton" tooltip title="GitHub Repo" placement="bottom" delay="500">
                         <a href="https://github.com/jettagozoom/DocumentViewing" target="_blank">
@@ -39,7 +42,7 @@
 		</header>
 
 		<section class="container tab-container">
-            <uib-tabset active="active" class="tabs">
+            <uib-tabset active="1" class="tabs">
                 <uib-tab index="0" heading="Usage" select="gotoView('usage')"> </uib-tab>
                 <uib-tab index="1" heading="PDFTron" select="gotoView('pdftron')"> </uib-tab>
             </uib-tabset>

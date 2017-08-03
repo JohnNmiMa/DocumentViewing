@@ -1,6 +1,13 @@
 <section id="pdftron" class="pdftron-container">
-    <p>PDFTron</p>
-    <button class="btn btn-default" ng-click="pdftronPreview()">Preview</button>
+    <p>PDFTron Previewer</p>
+    <div class="start-preview" layout="column">
+        <div flex></div>
+        <button class="btn btn-default" ng-click="pdftronPreview()">Preview</button>
+    </div>
 
-    <preview-dialog ng-if="showDocument" document="document"></preview-dialog>
+    <create-preview-dialog
+            data-provider="previewData"
+            data-client-id="offer.basicInfo.company.id"
+            ng-if="previewDialogVisible">
+    </create-preview-dialog>
 </section>

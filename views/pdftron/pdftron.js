@@ -63,6 +63,38 @@ function(                              $rootScope,   $scope) {
     }
 }])
 
+// Various dialog to approximate the Newton app layout/dialogs
+
+.directive("createPreviewDialog", ['$timeout', function($timeout) {
+
+    return {
+        restrict: "E",
+        templateUrl: "/views/pdftron/createPreviewDialog.html",
+        scope: {
+            dataProvider: '=provider',
+            clientId: '='
+        },
+        controller: ['$scope', function($scope) {
+            $scope.activeIndex = 0;
+            $scope.file =  $scope.dataProvider.files[0];
+            $scope.tokens = $scope.dataProvider.tokens;
+            $scope.signingEnabled = $scope.dataProvider.signingEnabled;
+
+            $scope.cancelDialog = function() {
+                $scope.$emit("closeOfferLetterPreview");
+            };
+
+            $scope.switchFile = function(file, index) {
+                $scope.file = null; //Remove flex paper so it reloads
+                $scope.activeIndex = index;
+                $timeout(function() {
+                    $scope.file = file;
+                }, 0);
+            }
+        }]
+    }
+}])
+
 .controller('previewDialogCtrl', ['$scope', '$timeout',
     function($scope, $timeout) {
 

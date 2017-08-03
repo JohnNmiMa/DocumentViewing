@@ -1,0 +1,37 @@
+<div id="preview-dialog" layout="column">
+
+    <div class="newton-dialog-header">
+        <div class="md-toolbar-tools dialog-header" layout="row" layout-align="space-between center">
+            <div class="md-subhead">Preview: {{file.name}}</div>
+            <a href="" class="ns-link-text" ng-click="cancelDialog()"> close preview </a>
+        </div>
+    </div>
+
+    <div ng-show="dataProvider.files.length > 1 " class="resume-bar">
+        <div class="bar-nav resume-bar-nav hide"></div>
+        <div class="bar-nav">
+            <ul>
+                <li ng-repeat="item in attachments.attachmentBarList track by $index"
+                    ng-click="switchFile(item, $index)"
+                    ng-class="{active: activeIndex === $index}">
+                    {{item.name}}
+                </li>
+            </ul>
+            <div class="more-resume"
+                 data-ng-class="{showMore: attachments && attachments.attachmentMoreList.length != 0}">
+                <span dropdowntoggle><newton-icon icon="more-attachments" class="new-standard"></newton-icon></span>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li ng-class="{ active: file.id === item.id }"
+                            data-ng-repeat="item in attachments.attachmentMoreList"
+                            class="resume-options" ng-click="switchFile(item)">
+                            <a newton-title="{{item.name}}">{{item.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <preview-dialog ng-if="showDocument" document="document"></preview-dialog>
+</div>

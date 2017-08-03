@@ -11,9 +11,9 @@ var docViewerApp = angular.module('DocumentViewing', ['ngRoute', 'ngSanitize', '
         controller: 'PdftronCtrl'
     })
     .when("/", {
-        redirectTo: "/usage"
+        redirectTo: "/pdftron"
     })
-    .otherwise({redirectTo: '/usage'});
+    .otherwise({redirectTo: '/pdftron'});
 }])
 
 .controller('main', ['$rootScope', '$scope', '$location', '$route', '$templateCache', function ($rootScope, $scope, $location, $route, $templateCache) {
