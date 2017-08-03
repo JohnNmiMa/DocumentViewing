@@ -1,0 +1,27 @@
+#docusign.content {
+  position: relative;
+}
+.ds-api {
+  margin-top: 10px;
+}
+.ds-api p {
+  margin-bottom: 0px;
+}
+.ds-api button {
+  margin-bottom: 3px;
+}
+.ds-api.account-api {
+  margin-top: 0;
+}
+.response-output {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 400px;
+}
+.response-output pre {
+  font-size: 10px;
+  background-color: white;
+  border: none;
+}

@@ -1,0 +1,9 @@
+<section id="previewers" class="previewers-container">
+    <form name="providerForm">
+        <label> <input type="radio" ng-model="provider" ng-value="providers[0]" ng-click="startTimer()"> {{providers[0].name}} </label>
+        <label> <input type="radio" ng-model="provider" ng-value="providers[1]" ng-click="startTimer()"> {{providers[1].name}} </label>
+    </form>
+    <select ng-model="selected" ng-options="doc as doc.name for doc in docs" name="docs"></select>
+    <iframe id="docpreview" onLoad="iframeLoaded()" src="{{getUrl()}}" width='100%' height='1000px' frameborder='0'></iframe>
+    <!--<div id="docpreview" ng-include="getUrl()"></div>-->
+</section>

@@ -1,0 +1,31 @@
+/* Desktop Viewer style overrides */
+#control.ui-widget-header {
+    background: #F1F3F5;
+    padding: 2px;
+}
+
+.toolbar .glyphicons.select .svg polygon { fill: #1B6A9E; }
+.toolbar .glyphicons.select:hover .svg polygon,
+.toolbar .glyphicons.select.active .svg polygon { fill: #88BDE5 }
+.toolbar .glyphicons:before { padding: 3px 4px 0 6px; }
+.toolbar .left-aligned { line-height:24px; }
+.toolbar .right-aligned { float: none; }
+
+#pageNumberBox { border: 1px solid #ccd3d8; }
+.toggleControl { border: 1px solid #ccd3d8; }
+
+#tabMenu {
+    background: #F1F3F5;
+    padding: 0 0 3px 0;
+}
+
+.glyphicons:before { color: #3C4452 !important; }
+.glyphicons:hover:before,
+.glyphicons.active:before { color:#3498DB !important; }
+.glyphicons.disabled:before,
+.glyphicons.disabled:hover:before { color: #AFB5BA !important; }
+
+/* Mobile Viewer style overrides */
+#pageHeader { background-color: #F1F3F5; }
+#sliderWrapper { padding-right: 5px; }
+

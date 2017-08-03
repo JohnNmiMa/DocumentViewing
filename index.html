@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DocumentViewing" ng-strict-di>
+	<head>
+		<title>Doc Viewing</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- build:css ./../static/combined.css -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Muli">
+		<link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<!-- endbuild -->
+	</head>
+    <body ng-controller="main">
+		<header>
+			<div class="top" layout="row">
+                <a class="name" href="" delay="500">Document<span>Viewing</span></a>
+
+                <div class="mobile-links flexitem-right-main">
+                    <div class="hamburger flex-col flex-space-around-main" id="hamburger" ng-click="toggleHamburger(this, $event)"></div>
+                    <div class="hamburger flex-col flex-space-around-main" id="hamburger" ng-click="toggleHamburger(this, $event)">
+                        <span class="flex-one"></span>
+                        <span class="flex-one"></span>
+                        <span class="flex-one"></span>
+                    </div>
+                    <div class="mobile-menu">
+                        <ul class="menu">
+                            <li> <a href="https://github.com/jettagozoom/DocumentViewing" target="_blank">GitHub</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="desktop-links">
+                    <li class="githubButton" tooltip title="GitHub Repo" placement="bottom" delay="500">
+                        <a href="https://github.com/jettagozoom/DocumentViewing" target="_blank">
+                            <i class="fa fa-github"></i></a></li>
+                </ul>
+			</div>
+		</header>
+
+		<section class="container tab-container">
+            <uib-tabset active="active" class="tabs">
+                <uib-tab index="0" heading="Usage" select="gotoView('usage')"> </uib-tab>
+                <uib-tab index="1" heading="PDFTron" select="gotoView('pdftron')"> </uib-tab>
+            </uib-tabset>
+        </section>
+
+		<section class="container">
+		<!--Use this one to enable animations-->
+            <div ng-view class="theview fadeInDown fadeOutDown"></div>
+		<!--Use this one to disable animations-->
+            <!--<div ng-view class="theview"></div>-->
+        </section>
+
+        <div>
+            <!-- build:js ./../static/combined.js -->
+            <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+            <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+			<script type="text/javascript" src="bower_components/lodash/dist/lodash.js"></script>
+
+            <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
+			<script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+            <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+            <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+			<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+            <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+
+            <script type="text/javascript" src="pdftron-dist/lib/WebViewer.js"></script>
+            <script type="text/javascript" src="app.js"></script>
+            <script type="text/javascript" src="views/usage/usage.js"></script>
+            <script type="text/javascript" src="views/pdftron/pdftron.js"></script>
+            <!-- endbuild -->
+        </div>
+	</body>
+</html>
