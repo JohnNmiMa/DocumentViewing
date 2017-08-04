@@ -5,7 +5,7 @@
 1. clone the repository: `git clone https://github.com/jettagozoom/DocumentViewing.git DocumentViewer`
 1. cd into the new repository: `cd DocumentViewer`
 1. Install the bower packages: `bower install`
-1. Run a web server to serve up the app. The http-server from npm woks great.
+1. Run a web server to serve up the app. The http-server from npm works great.
 
 #### Usage
 
