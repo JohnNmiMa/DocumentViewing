@@ -7,7 +7,7 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
 
             $mdDialog.show(
                 {
-                    templateUrl: "/views/pdftron/createPreviewDialog.html",
+                    templateUrl: "views/pdftron/createPreviewDialog.html",
                     locals: {
                         document: document
                     },
