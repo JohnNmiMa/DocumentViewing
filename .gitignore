@@ -19,4 +19,4 @@ tmpr/
 *.svg~
 
 
-*.css
+#*.css
