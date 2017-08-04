@@ -13,7 +13,7 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
                     },
                     bindToController: true,
                     clickOutsideToClose: false,
-                    // fullscreen: $mdMedia('xs'),
+                    fullscreen: $mdMedia('xs'),
                     controller: ['$scope', '$mdDialog', function($scope, $mdDialog) {
                         $scope.previewDocument = this.document;
                         var prevarr = $scope.previewDocument.split('/');
@@ -80,7 +80,9 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
         // 'userAgent' string. On ie11 desktops, the word 'Touch' is in the userAgent string
         // which forces the mobile viewer to be used. Our wrapper function below does some extra
         // checking to see if we are on ie11 desktops.
-        PDFTron.WebViewer.isMobileDevice = isMobileDeviceWrapper(PDFTron.WebViewer.isMobileDevice);
+        if (typeof PDFTron.WebViewer.isMobileDevice === 'function') {
+            PDFTron.WebViewer.isMobileDevice = isMobileDeviceWrapper(PDFTron.WebViewer.isMobileDevice);
+        }
 
         if (viewerElement) {
             if (pdftronViewer) {
@@ -108,6 +110,7 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
 
     function isMobileDeviceWrapper(pdftronIsMobileDevice) {
         return function() {
+            // return false;
             var isMobileDevice = pdftronIsMobileDevice();
             if (isMobileDevice && (navigator.userAgent.match(/Trident/i) || navigator.userAgent.match(/Edge/i)) ) {
                 // We are on a Window's device (IE* or Edge). Use the scrollbarWidth test to see if touch.
