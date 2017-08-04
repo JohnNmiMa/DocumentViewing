@@ -1,4 +1,15 @@
 <section id="pdftron" class="pdftron-container">
     <p>PDFTron Previewer</p>
+
+    <p>When displayed in iOS Safari, the PDFTron iFrame does not completely fit within the NewtonDocumentViewer id.
+       There are known issues with iFrames running on iOS - namely, the width and height attributes of the &lt;iframe&gt;
+       tag do not work. The iframes work well on Android as well as most desptop browsers.</p>
+
+    <p>Line 483 of WebViewer.js contains a line of jQuery that attempts to set the width and height at 100%.
+       This does not seem to be working. The next line uses the same jQuery, but sets the width and height
+       to that of the container element. Doing this seems to work in this 'popover dialog' case, causing the iFrame to be
+       set at the correct height. Even though this works, it might not be a proper long-term fix for other
+       layouts. It is hoped that a well-thought-out solution is found to fully support the non-redirected path.</p>
+
     <button class="btn btn-default" ng-click="pdftronPreview()">Preview</button>
 </section>

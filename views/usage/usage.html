@@ -1,15 +1,31 @@
 <section id="usage" class="usage-container">
     <h3>Usage of this app:</h3>
-    <p>This app is to be used to help test, explore and understand various document viewing services. At the moment,
-        PDFTron is the only service being tested.</p>
-    <ol>
-        <li><p>Begin by going the the PDFTron tab. Click the "Preview" button, and a popop should be displayed, showing an XOD
-               document inside of a PDFTron.WebViewer instance.</p>
-        </li>
-    </ol>
-    <p>The div in which the PDFTron WebViewer is contained in is named with the CSS id, "NewtonDocumentViewer". This sample app is responsive,
-       and can be used to test how well the iframe in the mobile version of PDFTron's MobileReaderControl sits within the "NewtonDocumentViewer"
-        container.</p>
+    <p> This sample app is to be used to help understand how the PDFTron WebViewer iFrame lives in a
+        hosted div on an SPA app. The case shown is very specific to a particular situation in the
+        Newton app. If other cases show up, another tab will be created to help showcase that particular issue.</p>
+
+    <p> The iFrame is created by the PDFTron WebViewer.js file, when the 'mobileRedirect: false'
+        option is used. This is the option used to keep the WebViewer from redirecting. The redirect
+        path works fine, as it doesn't use an iframe, but sits totally within a full-screen div on
+        a redirected page. Unfortunately, there are cases in SPA apps where the viewer must live in
+        a specific div, therefore forcing the usages of the iFrame (non-redirected) path.</p>
+
+    <p> The div in which the PDFTron WebViewer is contained in is named with the CSS id,
+        "NewtonDocumentViewer". This sample app is responsive, and can be used to test how well the
+        iframe in the mobile version of PDFTron's MobileReaderControl sits within the "NewtonDocumentViewer"
+        container. Due to the way PDFTron computes if the page is living on a mobile browser, you
+        must connect to this sample app from a real mobile device (or if on iOS, use the xcode iOS Simulator).</p>
+
+    <p> In addition, the isMobileDevice method, as shown in the v3.0.1 WebViewer.js, does not work
+        for ie11 desktops. When on ie11, the mobile path is taken, not the desktop path.
+        To fix this, either 1) find a proper fix for ie11 in the current isMobileDevice method,
+        or 2) allow the isMobileDevice method to be wrapped, so that the result of the method can be
+        augmented. It was necessary to override the function to make progress (without rewriting the function).
+        But, the function needed to be overridden before the WebViewer instance was created.
+        To help do that, the isMobileDevice function was turned into a static class function rather
+        than an instance function. Doing this allow the wrapper to be applied before the WebViewer instance was create
+        (since the isMobileDevice check is used during WebViewer instance creation). Whatever fix is found,
+        the desired goal is to have something that won't require any editing of the WebViewer.js.</p>
 
     <p>Feel free to enhance and change the application as desired.</p>
 </section>
