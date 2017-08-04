@@ -73,7 +73,7 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
     var pdftronViewer;
 
     var displayDocument = function(path) {
-        var PDFTRON_ROOT_DIRECTORY = '/pdftron-dist/',
+        var PDFTRON_ROOT_DIRECTORY = 'pdftron-dist/',
             viewerElement = document.getElementById('NewtonDocumentPreviewer');
 
         // We are wrapping the PDFTron isMobileDevice function. The PDFTron version uses the
