@@ -480,8 +480,8 @@ var PDFTron = PDFTron || {};
                 src: iframeSource,
                 frameborder: "0"
             });
-            // $rcFrame.css('width', width).css("height", height);
             $rcFrame.css('width', '100%').css("height", '100%');
+            // $rcFrame.css('width', width).css("height", height);
             $rcFrame.on('load', function() {
                 me.instance = this.contentWindow.readerControl;
 
