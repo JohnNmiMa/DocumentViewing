@@ -1,13 +1,13 @@
 ### DocumentSigning
 
-####Installation
+#### Installation
 
 1. clone the repository: `git clone https://github.com/jettagozoom/DocumentViewing.git DocumentViewer`
 1. cd into the new repository: `cd DocumentViewer`
 1. Install the bower packages: `bower install`
 1. Run a web server to serve up the app. The http-server from npm woks great.
 
-####Usage
+#### Usage
 
 This sample app is to be used to help understand how the PDFTron WebViewer iFrame lives in a
 hosted div on an SPA app. The case shown is very specific to a particular situation in the
