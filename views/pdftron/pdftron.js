@@ -3,11 +3,11 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
         $rootScope.selectedPage = 'pdftron';
 
         $scope.pdftronPreview = function() {
-            var document = "/pdftron-dist/GettingStarted.xod";
+            var document = "pdftron-dist/GettingStarted.xod";
 
             $mdDialog.show(
                 {
-                    templateUrl: "/views/pdftron/createPreviewDialog.html",
+                    templateUrl: "views/pdftron/createPreviewDialog.html",
                     locals: {
                         document: document
                     },
@@ -92,7 +92,7 @@ docViewerApp.controller('PdftronCtrl', ['$rootScope', '$scope', '$mdDialog', '$m
                     {
                         path: PDFTRON_ROOT_DIRECTORY+'lib',
                         initialDoc: path,
-                        config: "/views/pdftron/config.js",
+                        config: "views/pdftron/config.js",
                         type: 'html5,html5mobile',
                         documentType: "xod",
                         streaming: true,
