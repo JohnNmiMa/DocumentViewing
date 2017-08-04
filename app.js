@@ -1,4 +1,4 @@
-var docViewerApp = angular.module('DocumentViewing', ['ngRoute', 'ngSanitize', 'ngTouch', 'ngAnimate', 'ngMaterial', 'ui.bootstrap'])
+var docViewerApp = angular.module('DocumentViewing', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ngMaterial', 'ui.bootstrap'])
 
 .config(['$routeProvider', function ($routeProvider) {
     $routeProvider

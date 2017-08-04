@@ -16,23 +16,7 @@
 		<header>
 			<div class="top" layout="row" layout-align="start center">
                 <a class="name" href="" delay="500">Document<span>Viewing</span></a>
-
                 <div flex></div>
-
-                <div class="mobile-links flexitem-right-main">
-                    <div class="hamburger flex-col flex-space-around-main" id="hamburger" ng-click="toggleHamburger(this, $event)"></div>
-                    <div class="hamburger flex-col flex-space-around-main" id="hamburger" ng-click="toggleHamburger(this, $event)">
-                        <span class="flex-one"></span>
-                        <span class="flex-one"></span>
-                        <span class="flex-one"></span>
-                    </div>
-                    <div class="mobile-menu">
-                        <ul class="menu">
-                            <li> <a href="https://github.com/jettagozoom/DocumentViewing" target="_blank">GitHub</a> </li>
-                        </ul>
-                    </div>
-                </div>
-
                 <ul class="desktop-links">
                     <li class="githubButton" tooltip title="GitHub Repo" placement="bottom" delay="500">
                         <a href="https://github.com/jettagozoom/DocumentViewing" target="_blank">
@@ -42,7 +26,7 @@
 		</header>
 
 		<section class="container tab-container">
-            <uib-tabset active="1" class="tabs">
+            <uib-tabset active="0" class="tabs">
                 <uib-tab index="0" heading="Usage" select="gotoView('usage')"> </uib-tab>
                 <uib-tab index="1" heading="PDFTron" select="gotoView('pdftron')"> </uib-tab>
             </uib-tabset>
@@ -59,18 +43,17 @@
             <!-- build:js ./../static/combined.js -->
             <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
             <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-			<script type="text/javascript" src="bower_components/lodash/dist/lodash.js"></script>
 
             <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
             <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
             <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
             <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script>
-			<script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
-            <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-            <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+			<script type="text/javascript" src="bower_components/angular-touch/angular-touch.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
-			<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-            <script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+			<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+            <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
 
             <script type="text/javascript" src="pdftron-dist/lib/WebViewer.js"></script>
             <script type="text/javascript" src="app.js"></script>
