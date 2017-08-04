@@ -1,10 +1,10 @@
 {
-  "name": "BigRadioInputs",
-  "homepage": "https://github.com/jettagozoom/BigRadioInputs",
+  "name": "DocumentViewer",
+  "homepage": "https://github.com/jettagozoom/DocumentViewer",
   "authors": [
     "jettagozoom <johnmarksjr@gmail.com>"
   ],
-  "description": "Get the input type=radio buttons larger",
+  "description": "Sample app that uses PDFTron WebViewer",
   "main": "index.html",
   "moduleType": [],
   "license": "MIT",
@@ -25,7 +25,6 @@
     "bootstrap": "^3.3.6",
     "font-awesome": "fontawesome#^4.5.0",
     "angular-sanitize": "^1.5.0",
-    "lodash": "^4.6.1",
     "angular-material": "^1.0.6",
     "angular-touch": "^1.5.1",
     "ui-bootstrap": "angular-ui-bootstrap#^1.2.4",
